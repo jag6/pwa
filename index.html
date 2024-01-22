@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata First -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>Cycle Tracking App</title>
+    <!-- Fonts and CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon and Manifest -->
+    <link rel="manifest" href="/manifest/manifest.json">
+    <link rel="icon" href="/manifest/icons/circle.ico">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jag6.github.io/pwa">
+    <!-- Metadata -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="Securely and confidentially track your menstrual cycle. Enter the start and end dates of your periods, saving your private data to your browser on your device, without sharing it with the rest of the world.">
+    <!-- Twitter Metadata -->
+    <meta name="twitter:title" content="Cycle Tracking App">
+    <meta property="twitter:description" content="Securely and confidentially track your menstrual cycle. Enter the start and end dates of your periods, saving your private data to your browser on your device, without sharing it with the rest of the world.">
+    <meta name="twitter:image" content="/manifest/icons/circle.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Other Social Media Metadata-->
+    <meta property="og:image" content="/manifest/icons/circle.svg">
+    <meta property="og:description" content="Securely and confidentially track your menstrual cycle. Enter the start and end dates of your periods, saving your private data to your browser on your device, without sharing it with the rest of the world.">
+    <meta property="og:title" content="Cycle Tracking App">
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://jag6.github.io/pwa"/>
+    <!-- App -->
+    <script src="/app.js" defer></script>
+    <script>
+        if('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+            .then((registration) => {
+                console.log('Service worker registration successful', registration);
+            }, 
+            (error) => {
+                console.log(`Service worker registration failed: ${error}`);
+            },);
+        }else {
+            console.log('Service workers not supported')
+        }
+    </script>
+</head>
+<body>
+    <section><h1>Cycle Tracker</h1></section>
+    <section>
+        <form>
+            <fieldset>
+                <legend>Enter start and end date</legend>
+                <div>
+                    <label for="start-date">Start Date</label>
+                    <input type="date" name="start-date" id="start-date" required autofocus>
+                </div>
+                <div>
+                    <label for="end-date">End Date</label>
+                    <input type="date" name="end-date" id="end-date" required>
+                </div>
+            </fieldset>
+            <div>
+                <button type="submit" aria-label="Add Period Date Button">SUBMIT</button>
+            </div>
+            <section id="past-periods">
+                <section><h2>Past Periods</h2></section>
+                <div id="past-period-list"></div>
+            </section>
+        </form>
+    </section>
+</body>
+</html>
