@@ -20,4 +20,5 @@ li, legend {
 li:nth-of-type(even) {
     background-color: inherit;
 }
+li:hover { cursor: pointer; }
   

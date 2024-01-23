@@ -2,7 +2,7 @@ const swVersion = 'v1';
 const cacheName = `period-tracker-${swVersion}`;
 
 const appStaticResources = [
-    '/pwa',
+    '/',
     '/index.html',
     '/css/style.css',
     '/app.js',
@@ -44,7 +44,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     // direct app to always go to homepage
     if(e.request.mode === 'navigate') {
-        e.respondWith(caches.match('/pwa'));
+        e.respondWith(caches.match('/'));
         return;
     }
 
