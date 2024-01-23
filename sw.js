@@ -6,12 +6,7 @@ const appStaticResources = [
     '/index.html',
     '/css/style.css',
     '/app.js',
-    '/manifest/manifest.json',
-    '/manifest/icons/circle.ico',
-    '/manifest/icons/circle.svg',
-    '/manifest/icons/favicon.ico',
-    '/manifest/icons/tire.svg',
-    '/manifest/icons/wheel.svg',
+    '/manifest/',
 ];
 
 self.addEventListener('install', (e) => {
